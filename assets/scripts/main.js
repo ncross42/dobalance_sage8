@@ -38,6 +38,14 @@
       init: function() {
         // JavaScript to be fired on the about us page
       }
+    },
+    'single': {
+      init: function() {
+        // JavaScript to be fired on the about us page
+        $('[data-toggle="offcanvas"]').click(function () {
+          $('.row-offcanvas').toggleClass('active');
+        });
+      }
     }
   };
 
