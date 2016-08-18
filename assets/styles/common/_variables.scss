@@ -3,7 +3,21 @@ $icon-font-path:        "../fonts/";
 
 // Grid settings
 $main-sm-columns:       12;
-$sidebar-sm-columns:    4;
+$sidebar-sm-columns:    3;
 
 // Colors
-$brand-primary:         #27ae60;
+//$brand-primary:         #27ae60;
+$brand-primary: #4169E1 /*RoyalBlue*/; // #87CEEB/*SkyBlue*/; //#D2B48C/*Tan*/;
+
+/*
+// Font Colors
+$base-font-size:   15px;
+$base-font-family: "nanumgothic","helvetica";//,"Gungsuh";
+$base-font-color:  #666;
+
+// Background Colors
+$primary-color:   #00aff0;
+$secondary-color: #7fba00;
+$light-color:     #e4eef2;
+$dark-color:      #333;
+*/

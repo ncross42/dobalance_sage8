@@ -1,3 +1,32 @@
+/*
+.navbar-default {
+  width: 90%;
+  margin: auto;
+  @include add-border( 1px, #e7e7e7, 'right-left' );
+  background: #fff;
+  margin-bottom: 10px;
+  //min-height: 60px;
+
+  a {
+    color: $primary-color !important;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    padding-bottom: 24px;
+    padding-top: 20px;
+
+    &:hover {
+      background-color: $primary-color !important;
+      color: #fff !important;
+    }
+  }
+}
+*/
+
+.navbar-nav li.current-menu-ancestor {
+  background-color: $navbar-default-link-active-bg;
+  color: $navbar-default-link-active-color;
+}
+
 .navbar-toggle.navbar-left {
   float: left;
   margin-left: 5px;

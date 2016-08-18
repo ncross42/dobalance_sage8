@@ -1,7 +1,11 @@
-/*
- * Off Canvas
- * --------------------------------------------------
- */
+/*aside {
+  float: right;
+  width: 150px;
+  background: LightGreen;
+}*/
+
+
+// Off Canvas
 @media screen and (max-width: 767px) {
   .row-offcanvas {
     position: relative;
@@ -37,7 +41,7 @@
   }
 
   .sidebar-offcanvas {
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     width: 50%; /* 6 columns */
   }

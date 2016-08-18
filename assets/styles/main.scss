@@ -5,6 +5,8 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "common/mixins";
+//@import "common/normalize";
 @import "common/global";
 @import "components/buttons";
 @import "components/comments";
@@ -17,3 +19,6 @@
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
+
+//@import "components/genericons";
+//@import "components/widget";

@@ -1,1 +1,50 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
+table {
+  border-collapse: collapse;
+  border-width: 1px;
+  border-spacing: 0;
+  width: 100%;
+  
+  th {
+    text-align: center;
+    background-color: darken($table-border-color,7.2%);
+  }
+}
+
+.page-header,
+.page-title {
+  padding: 0;
+  margin: 0;
+}
+
+//  6.1 Links (15)
+a {
+	color: #333;
+  //border-bottom: thin dotted $brand-primary;
+  &:hover, &:focus {
+    color: $brand-primary;
+    text-decoration: none;
+  }
+}
+
+/*
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  color: $base-font-color;
+  text-decoration:none;
+}
+
+a {
+  color: #00aff0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+input, textarea, button {
+  @include border-radius(0px);
+}
+*/
