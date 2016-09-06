@@ -1,0 +1,59 @@
+// home.php
+.home {
+  h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .col-sx-12, .col-sm-6, .col-md-4, .col-lg-4 {
+    padding:0;
+  }
+
+  .block {
+    margin: 5px;
+    border : 1px solid #ccc;
+    height: 300px;
+
+    h2 {
+      font-size: 22px;
+      margin-top: 5px;
+      margin-left: 5px;
+      margin-bottom: 2px;
+      color: $brand-primary;
+      border-bottom: 1px solid #999;
+      div {
+        span {
+          font-size: 0.8em;
+        }
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    div.excerpt {
+      overflow: hidden;
+      height: 240px;
+
+      .postcat {
+        background-color: #f3f3f3;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .thumb {
+        text-align: center;
+        padding: 5px;
+        span {
+          width: 100px;
+          border: 1px solid #ddd;
+        }
+      }
+    }
+  }
+}
+
+// taxonomy.php
+
+// single.php

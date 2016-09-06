@@ -29,7 +29,7 @@ $bFirst = true;
 foreach ( $img_all as $img ) :
 	$active = $bFirst ? 'active' : ''; $bFirst=false;
 ?>
-		<div class="item <?=$active?>">
+		<div class="item <?php echo $active;?>">
 			<img src="<?php echo $img['url'];?>" 
 				srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $img['attachment_id'] ) ); ?>" 
 				sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" 
@@ -38,7 +38,7 @@ foreach ( $img_all as $img ) :
 				alt="<?php echo esc_attr( empty($img['alt_text']) ? get_bloginfo('name','display') : $img['alt_text'] ); ?>"
 			>
 		</div>
-<?  endforeach; ?>
+<?php endforeach; ?>
 	</div>
 
 	<!-- Controls -->

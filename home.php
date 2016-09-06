@@ -1,16 +1,16 @@
 <?php //get_template_part('templates/page', 'header'); 
 $sql_recent = [
-	'posts_per_page' => 7,
+	'posts_per_page' => 6,
 	'ignore_sticky_posts' => 1,
   'post_type' => 'post',
 ];
 ?>
 
-<div class="container">
+<div class="container home">
 
-<h3>최신 전체 비밀투표</h3>
+<h1>최근 비밀투표</h1>
 <div class="row">
-<?
+<?php
 $sql_recent['post_type'] = 'elect';
 $ret = query_posts($sql_recent);
 while(have_posts()) : the_post();
@@ -19,9 +19,9 @@ endwhile;
 ?>
 </div>
 
-<h3>최신 전체 공개발의</h3>
+<h1>최근 공개발의</h1>
 <div class="row">
-<?
+<?php
 $sql_recent['post_type'] = 'offer';
 query_posts($sql_recent);
 while(have_posts()) : the_post();
@@ -30,9 +30,9 @@ endwhile;
 ?>
 </div>
 
-<h3>최신 전체 포스트</h3>
+<h1>최근 포스트</h1>
 <div class="row">
-<?
+<?php
 $sql_recent['post_type'] = 'post';
 query_posts($sql_recent);
 if(have_posts()): while(have_posts()) : the_post();
@@ -41,9 +41,9 @@ endwhile; endif;
 ?>
 </div>
 
-<h3>test</h3>
+<!--h1>test</h1>
 <div class="row">
-<?
+<?php
 /*
 $q1 = [
 	'posts_per_page'=>5,
@@ -62,7 +62,7 @@ if(have_posts()): while(have_posts()):
 endwhile; endif;
  */
 ?>
-</div>
+</div-->
 
 <? # get_sidebar(); ?>
 
