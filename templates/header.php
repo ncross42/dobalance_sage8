@@ -30,7 +30,7 @@
       </div> <!-- "container-fluid" -->
     </nav>
 
-    <?php if ( !is_user_logged_in() && get_header_image() ) : ?>
+    <?php if ( is_home() && !is_user_logged_in() && get_header_image() ) : ?>
     <div class="header-image">
       <?php get_template_part('templates/header','carousel'); ?>
     </div><!-- .header-image -->

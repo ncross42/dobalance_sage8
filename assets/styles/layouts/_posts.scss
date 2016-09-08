@@ -1,5 +1,5 @@
 article header {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 img.size-full, img.size-large, .wp-post-image, .post-thumbnail img {
@@ -9,4 +9,20 @@ img.size-full, img.size-large, .wp-post-image, .post-thumbnail img {
 
 .entry-meta {
   text-align:right;
+}
+
+article {
+  .entry-title {
+    margin-top: 10px;
+  }
+  .well {
+    padding: 5px;
+    background-color: #fff;
+  }
+  .entry-summary {
+    p {
+      margin-top: 5px;
+      margin-bottom: 0px;
+    }
+  }
 }
