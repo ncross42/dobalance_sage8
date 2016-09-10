@@ -1,7 +1,7 @@
 <?php 
   //echo '<pre>'.print_r(get_post_class(),true).'</pre>';
   list($pid,$cpt) = get_post_class(); 
-  $cpt_icon = ($cpt=='offer'?'glyphicon-tree-conifer':($cpt=='elect'?'glyphicon glyphicon-leaf':'glyphicon-file') );
+  $cpt_icon = ($cpt=='offer'?'glyphicon-tree-conifer':($cpt=='elect'?'glyphicon-leaf':'glyphicon-file') );
   $no_img_src = Roots\Sage\Assets\asset_path('images/no_image.jpg');
   $body_classes = get_body_class();
   $bThumb = has_post_thumbnail();
