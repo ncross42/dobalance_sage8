@@ -27,10 +27,12 @@
           wp_nav_menu($args);
         endif;
         ?>
+        <?php if ( ! is_home() ) : ?>
         <div class="toggle_sidebar">
           <a href="#toggle_sidebar" class="glyphicon glyphicon-menu-left"></a>
           <a href="#toggle_sidebar" class="glyphicon glyphicon-remove"></a>
         </div>
+        <?php endif; ?>
       </div> <!-- "container-fluid" -->
     </nav>
 

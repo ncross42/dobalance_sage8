@@ -12,13 +12,49 @@
 
 (function($) {
 
+  var addEventsListener = function(obj,events,callback){
+    var i=events.split(" ");
+    for(let n in i) obj.addEventListener(i[n],callback)
+  }
+
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
   var Sage = {
     // All pages
     'common': {
       init: function() {
+        console.log('common');
         // JavaScript to be fired on all pages
+
+        // sidebar-primary 
+        if ( document.querySelector('body').classList.contains('sidebar-primary') ) {
+          $('a[href="#toggle_sidebar"]').click(function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            $('div.toggle_sidebar').toggleClass('sidebar-active');
+            $('#sidebar').toggleClass('sidebar-active');
+          });
+
+          // Event: Prevent clicks/taps inside the sidebar from bubbling.
+          $sidebar = document.querySelector('#sidebar');
+          addEventsListener($sidebar, 'click touchend', function(event) {
+            event.stopPropagation();
+          });
+          // Event: Prevent clicks/taps inside the sidebar from bubbling.
+          $sidebar = document.querySelector('#sidebar');
+          addEventsListener($sidebar, 'click touchend', function(event) {
+            event.stopPropagation();
+          });
+          // Event: Hide sidebar on body click/tap.
+          $body = document.querySelector('body');
+          addEventsListener($body, 'click touchend', function(event) {
+            if ( $sidebar.classList.contains('sidebar-active') ) {
+              $sidebar.classList.remove('sidebar-active');
+              document.querySelector('div.toggle_sidebar').classList.remove('sidebar-active');
+            }
+          });
+        } // end sidebar-primary
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -42,15 +78,6 @@
     'single': {
       init: function() {
         // JavaScript to be fired on the about us page
-        $('a[href="#toggle_sidebar"]').click(function (event) {
-          //event.preventDefault();
-          //event.stopPropagation();
-          event.preventDefault();
-
-          $('div.toggle_sidebar').toggleClass('sidebar-active');
-          $('#sidebar').toggleClass('sidebar-active');
-          $('#page-wrapper').toggleClass('sidebar-active');
-        });
       }
     }
   };
