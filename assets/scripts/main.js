@@ -42,8 +42,14 @@
     'single': {
       init: function() {
         // JavaScript to be fired on the about us page
-        $('[data-toggle="offcanvas"]').click(function () {
-          $('.row-offcanvas').toggleClass('active');
+        $('a[href="#toggle_sidebar"]').click(function (event) {
+          //event.preventDefault();
+          //event.stopPropagation();
+          event.preventDefault();
+
+          $('div.toggle_sidebar').toggleClass('sidebar-active');
+          $('#sidebar').toggleClass('sidebar-active');
+          $('#page-wrapper').toggleClass('sidebar-active');
         });
       }
     }

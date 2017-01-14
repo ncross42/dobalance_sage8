@@ -27,6 +27,10 @@
           wp_nav_menu($args);
         endif;
         ?>
+        <div class="toggle_sidebar">
+          <a href="#toggle_sidebar" class="glyphicon glyphicon-menu-left"></a>
+          <a href="#toggle_sidebar" class="glyphicon glyphicon-remove"></a>
+        </div>
       </div> <!-- "container-fluid" -->
     </nav>
 

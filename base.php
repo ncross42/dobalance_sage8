@@ -4,8 +4,7 @@ use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
 
 ?>
-
-<!doctype html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
@@ -18,13 +17,13 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <div class="wrap container" role="document">
-      <div class="content row row-offcanvas row-offcanvas-right">
+    <div id="page-wrapper" class="wrap container" role="document">
+      <div class="content row">
         <main class="main col-xs-12 ">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (Setup\display_sidebar()) : ?>
-          <aside id="sidebar" class="sidebar col-xs-6 sidebar-offcanvas">
+          <aside id="sidebar" class="sidebar col-xs-6">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
         <?php endif; ?>
