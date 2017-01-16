@@ -13,8 +13,10 @@
 (function($) {
 
   var addEventsListener = function(obj,events,callback){
-    var i=events.split(" ");
-    for(let n in i) { obj.addEventListener(i[n],callback); }
+    events.split(" ").forEach( (e) => {
+      if ( typeof(obj.length) == "undefined" ) { obj.addEventListener(e,callback); }
+      else { obj.forEach( o => o.addEventListener(e,callback) ); }
+    });
   };
 
   // Use this variable to set up the common and page specific functions. If you
@@ -27,27 +29,24 @@
         // JavaScript to be fired on all pages
 
         // sidebar-primary 
-        if ( document.querySelector('body').classList.contains('sidebar-primary') ) {
-          $('a[href="#toggle_sidebar"]').click(function (event) {
-            event.preventDefault();
+        var $body = document.querySelector('body');
+        if ( $body.classList.contains('sidebar-primary') ) {
+          $toggle_sidebar = document.querySelectorAll('a[href="#toggle_sidebar"]');
+          addEventsListener($toggle_sidebar, 'click touchend', function(event) {
             event.stopPropagation();
-            $('div.toggle_sidebar').toggleClass('sidebar-active');
-            $('#sidebar').toggleClass('sidebar-active');
+            event.preventDefault();
+            document.querySelector('#sidebar').classList.toggle('sidebar-active');
+            document.querySelector('div.toggle_sidebar').classList.toggle('sidebar-active');
           });
 
           // Event: Prevent clicks/taps inside the sidebar from bubbling.
-          $sidebar = document.querySelector('#sidebar');
-          addEventsListener($sidebar, 'click touchend', function(event) {
-            event.stopPropagation();
-          });
-          // Event: Prevent clicks/taps inside the sidebar from bubbling.
-          $sidebar = document.querySelector('#sidebar');
+          var $sidebar = document.querySelector('#sidebar');
           addEventsListener($sidebar, 'click touchend', function(event) {
             event.stopPropagation();
           });
           // Event: Hide sidebar on body click/tap.
-          $body = document.querySelector('body');
           addEventsListener($body, 'click touchend', function(event) {
+            var $sidebar = document.querySelector('#sidebar');
             if ( $sidebar.classList.contains('sidebar-active') ) {
               $sidebar.classList.remove('sidebar-active');
               document.querySelector('div.toggle_sidebar').classList.remove('sidebar-active');
