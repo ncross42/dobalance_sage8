@@ -14,8 +14,8 @@
 
   var addEventsListener = function(obj,events,callback){
     var i=events.split(" ");
-    for(let n in i) obj.addEventListener(i[n],callback)
-  }
+    for(let n in i) { obj.addEventListener(i[n],callback); }
+  };
 
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
