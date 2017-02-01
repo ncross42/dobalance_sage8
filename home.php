@@ -7,6 +7,16 @@ $sql_recent = [
 ?>
 
 <div class="container home">
+<?php
+if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'], 'rv:11.0') ){
+  echo <<<HTML
+<a href='https://www.google.co.kr/chrome' class='alert alert-danger'>
+  Internet Explorer 는 지원하지 않습니다. 최신의 Chrome, Firefox, Safari, Opera 브라우저로 이용해 주세요.
+  (Chrome 브라우저 설치하기)
+</a>
+HTML;
+}
+?>
 
 <h1>최근 비밀투표</h1>
 <div class="row">
@@ -64,10 +74,6 @@ endwhile; endif;
 ?>
 </div-->
 
-<? # get_sidebar(); ?>
-
 </div> <!-- container -->
-
-<? //get_footer(); ?>
 
 <?php //the_posts_navigation(); ?>
